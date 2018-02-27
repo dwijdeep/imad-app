@@ -1,15 +1,15 @@
-var express = require('express');
-var morgan = require('morgan');
+var express = require('express'); //to create the web server.....listening to the port and handling the connection for the server
+var morgan = require('morgan'); //to help us generate output logs
 var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/', function (req, res) {
+app.get('/', function (req, res) { 
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/ui/style.css', function (req, res) {
+app.get('/ui/style.css', function (req, res) { 
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
